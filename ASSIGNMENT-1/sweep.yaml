@@ -1,0 +1,63 @@
+method: bayes
+command: ["python", "main.py"]
+metric:
+  goal: minimize
+  name: cumulative_mean_regret
+parameters:
+  learning_rate:
+    min: 0.001
+    max: 1
+    distribution: log_uniform_values
+
+  episodes:
+    values: [5000]
+
+  param:
+    min: 0.1
+    max: 1.0
+    distribution: uniform
+
+  param_decay:
+    min: 0.9
+    max: 1
+    distribution: uniform
+
+  final_param:
+    min: 0.0001
+    max: 0.2
+    distribution: uniform
+
+  experiments:
+    value: 3
+
+  env_name:
+    values: ["MountainCar-v0"]
+
+  max_episode_steps:
+    values: [200]
+
+  policy:
+    values: ["epsilon_greedy"]
+
+  algo:
+    values: ["SARSA"]
+
+  bin_step_0:
+    min: 5
+    max: 25
+    distribution: int_uniform
+
+  bin_step_1:
+    min: 5
+    max: 25
+    distribution: int_uniform
+
+  bin_step_2:
+    min: 5
+    max: 25
+    distribution: int_uniform
+
+  bin_step_3:
+    min: 5
+    max: 25
+    distribution: int_uniform

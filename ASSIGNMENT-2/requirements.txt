@@ -1,0 +1,5 @@
+gymnasium
+numpy>=1.21.0
+matplotlib>=3.4.2
+torch>=1.9.0
+wandb
